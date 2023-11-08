@@ -1,0 +1,60 @@
+ <!-- offers -->
+<div id="carouselExampleDark" class="carousel carousel-dark slide m-2 mx-4" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="https://i.pinimg.com/originals/68/58/e0/6858e0ec2d329f1f127ebb9ceb18b0af.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://i.pinimg.com/originals/12/37/bd/1237bdb13a464b4425b91cf287e9315b.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://images.freekaamaal.com/store_desc_images/1537253332.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+<div class="container my-3" id="searchFocus">
+    <a href="#products" class="fa-beat-fade">Search product here <i class="fa-solid fa-angles-down"></i></a>
+</div>
+<!-- Product list -->
+<div class="container mt-4 mb-3" id="products">
+  <input
+          (keyup)="search($event)"
+          type="search"
+          class="form-control container-fluid rounded mb-3"
+          placeholder="Search product"
+          aria-label="Search"
+          aria-describedby="search-addon"
+          style="width: 100%;"
+        />
+<div class="row" id="productRow">
+<div class="card m-1 p-1 mt-2" *ngFor="let product of allProducts.products |filter: searchKey:'title'">
+    <img [src]="product.thumbnail" width="200px" height="170px" class="card-img-top rounded" alt="">
+    <div class="card-body" style="height: 170px;">
+      <h5 class="card-title">{{product.title}}</h5>
+      <p class="card-text" style="font-size: 12px;"><b style="font-size: 16px; margin-right: 10px;">$ {{product.price}}</b>(-{{product.discountPercentage}}%)</p>
+    <p class="card-text">{{product.description}}</p>
+    </div>
+    <div class="card-body">
+        <p class="card-text text-center text-light" id="stock">{{product.stock}} LEFT</p>
+        <p class="card-text text-center text-light" id="rating">{{product.rating}} <i class="fa-solid fa-star"></i></p><br><br>
+      <a routerLink="" class="btn btn-success px-3 py-1 ms-4 me-2">Add to cart</a>
+      <a routerLink="viewProduct/{{product.id}}" class="btn btn-success px-3 py-1">View product</a>
+    </div>
+</div>
+</div>
+</div>
+
+  

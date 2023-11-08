@@ -1,0 +1,17 @@
+<div class="container mt-3 mb-5">
+    <div class="row">
+        <div class="col">
+            <img [src]="product.thumbnail" alt="" width="600px" height="350px">
+        </div>
+        <div class="col py-3">
+            <h2>{{product.brand}} {{product.title}}</h2>
+            <p class="text-center text-light" id="rating">{{product.rating}} <i class="fa-solid fa-star"></i></p>
+            <p style="font-size: 15px;"><b style="font-size: 20px; margin-right: 10px;">$ {{product.price}}</b>(-{{product.discountPercentage}}%)</p>
+            <p style="text-align: justify;">{{product.description}}</p>
+            <p class="card-text text-center text-light" id="stock">{{product.stock}} LEFT</p>
+            <p>Browse Type : {{product.category}}</p>
+            <a routerLink="" class="btn btn-warning px-3 py-1 me-2">Add to cart</a>
+            <a routerLink="" class="btn btn-warning px-3 py-1">Buy now</a>
+        </div>
+    </div>
+</div>

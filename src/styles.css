@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch&family=Lilita+One&family=Signika&display=swap');
+
+*{
+    font-family: 'Chakra Petch', sans-serif;
+}
+h2,h5{
+    font-family: 'Signika', sans-serif;
+}
+h1{
+    font-family: 'Lilita One', cursive;
+}
